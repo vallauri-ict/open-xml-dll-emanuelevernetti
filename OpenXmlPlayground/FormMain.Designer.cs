@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnSimpleWordTest = new System.Windows.Forms.Button();
+            this.btnSimpleExcelTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSimpleWordTest
@@ -41,11 +42,22 @@
             this.btnSimpleWordTest.UseVisualStyleBackColor = true;
             this.btnSimpleWordTest.Click += new System.EventHandler(this.btnSimpleWordTest_Click);
             // 
+            // btnSimpleExcelTest
+            // 
+            this.btnSimpleExcelTest.Location = new System.Drawing.Point(12, 41);
+            this.btnSimpleExcelTest.Name = "btnSimpleExcelTest";
+            this.btnSimpleExcelTest.Size = new System.Drawing.Size(460, 23);
+            this.btnSimpleExcelTest.TabIndex = 1;
+            this.btnSimpleExcelTest.Text = "SIMPLE EXCEL SPREADSHEET TEST";
+            this.btnSimpleExcelTest.UseVisualStyleBackColor = true;
+            this.btnSimpleExcelTest.Click += new System.EventHandler(this.btnSimpleExcelTest_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.btnSimpleExcelTest);
             this.Controls.Add(this.btnSimpleWordTest);
             this.Name = "FormMain";
             this.Text = "OpenXML Playground";
@@ -56,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnSimpleWordTest;
+        private System.Windows.Forms.Button btnSimpleExcelTest;
     }
 }
 

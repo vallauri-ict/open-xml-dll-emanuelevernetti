@@ -35,17 +35,17 @@ namespace OpenXmlPlayground
                     Body body = mainPart.Document.AppendChild(new Body());
 
                     // Define the styles
-                    ClsOpenXmlUtilities.AddStyle(mainPart, "MyHeading1", "style1", "Verdana", 28, "#0000FF", false, true, true);
-                    ClsOpenXmlUtilities.AddStyle(mainPart, "MyTypeScript", "Macchina da scrivere", "Consolas", 10, "#333333", true, false, false);
+                    ClsWord.AddStyle(mainPart, "MyHeading1", "style1", "Verdana", 28, "#0000FF", false, true, true);
+                    ClsWord.AddStyle(mainPart, "MyTypeScript", "Macchina da scrivere", "Consolas", 10, "#333333", true, false, false);
 
                     // Add MyHeading1 styled text
-                    Paragraph headingPar = ClsOpenXmlUtilities.CreateParagraphWithStyle("MyHeading1", JustificationValues.Center);
-                    ClsOpenXmlUtilities.AddTextToParagraph(headingPar, "Titolo con stile applicato");
+                    Paragraph headingPar = ClsWord.CreateParagraphWithStyle("MyHeading1", JustificationValues.Center);
+                    ClsWord.AddTextToParagraph(headingPar, "Titolo con stile applicato");
                     body.AppendChild(headingPar);
 
                     // Add MyTypeScript styled text
-                    Paragraph typescriptPar = ClsOpenXmlUtilities.CreateParagraphWithStyle("MyTypeScript", JustificationValues.Left);
-                    ClsOpenXmlUtilities.AddTextToParagraph(typescriptPar, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+                    Paragraph typescriptPar = ClsWord.CreateParagraphWithStyle("MyTypeScript", JustificationValues.Left);
+                    ClsWord.AddTextToParagraph(typescriptPar, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
                     body.AppendChild(typescriptPar);
 
                     // Add simple text
@@ -79,7 +79,7 @@ namespace OpenXmlPlayground
                     }
 
                     // Append image
-                    ClsOpenXmlUtilities.InsertPicture(doc, "panorama.jpg");
+                    ClsWord.InsertPicture(doc, "panorama.jpg");
                 }
                 Process.Start(filepath);
             }
@@ -342,6 +342,11 @@ namespace OpenXmlPlayground
             retVal.Add(p3);
 
             return retVal;
+        }
+
+        private void btnSimpleExcelTest_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

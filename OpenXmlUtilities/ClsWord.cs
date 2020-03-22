@@ -11,7 +11,7 @@ using PIC = DocumentFormat.OpenXml.Drawing.Pictures;
 
 namespace OpenXmlUtilities
 {
-    public class ClsOpenXmlUtilities
+    public class ClsWord
     {
         public static void AddStyle(MainDocumentPart mainPart, string styleId, string styleName, string fontName, int fontSize, string rgbColor, bool isBold, bool isItalic, bool isUnderlined)
         {
