@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenXmlUtilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,7 +7,7 @@ using System.Windows.Forms;
 
 namespace OpenXmlPlayground
 {
-    static class Program
+    class Program
     {
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.

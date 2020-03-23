@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.IO;
 
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using OpenXmlUtilities;
 using Color = DocumentFormat.OpenXml.Wordprocessing.Color;
+
 
 namespace OpenXmlPlayground
 {
@@ -346,7 +348,45 @@ namespace OpenXmlPlayground
 
         private void btnSimpleExcelTest_Click(object sender, EventArgs e)
         {
+            string filepath = "Test.xlsx";
+            try
+            {
+                List<ClsExcel> tmList = new List<ClsExcel>();
+                ClsExcel tm = new ClsExcel();
+                tm.TestId = 1;
+                tm.TestName = "Test1";
+                tm.TestDesc = "Tested 1 time";
+                tm.TestDate = DateTime.Now.Date;
+                tmList.Add(tm);
 
+                ClsExcel tm1 = new ClsExcel();
+                tm1.TestId = 2;
+                tm1.TestName = "Test2";
+                tm1.TestDesc = "Tested 2 times";
+                tm1.TestDate = DateTime.Now.AddDays(-1);
+                tmList.Add(tm1);
+
+                ClsExcel tm2 = new ClsExcel();
+                tm2.TestId = 3;
+                tm2.TestName = "Test3";
+                tm2.TestDesc = "Tested 3 times";
+                tm2.TestDate = DateTime.Now.AddDays(-2);
+                tmList.Add(tm2);
+
+                ClsExcel tm3 = new ClsExcel();
+                tm3.TestId = 4;
+                tm3.TestName = "Test4";
+                tm3.TestDesc = "Tested 4 times";
+                tm3.TestDate = DateTime.Now.AddDays(-3);
+                tmList.Add(tm);
+
+                ClsExcel.CreateExcelFile(tmList, filepath);
+                Process.Start(filepath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problemi col documento. Se è aperto da un altro programma, chiudilo e riprova... \n" + ex.Message);
+            }
         }
     }
 }
