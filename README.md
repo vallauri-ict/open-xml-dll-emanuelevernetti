@@ -44,8 +44,9 @@ using X14 = DocumentFormat.OpenXml.Office2010.Excel;
 using X15 = DocumentFormat.OpenXml.Office2013.Excel;
 ```
 ## Metodi
-* **public static void CreateExcelFile<T>(List<T> data, string path)**: crea un foglio di calcolo di Microsoft Excel 
+* **public static void CreateExcelFile<T>(List<T> data, string path)**: crea un foglio di calcolo di Microsoft Excel
 
+Gli altri metodi presenti all'interno della classe servono per andare a creare le celle all'interno del foglio di calcolo e per andare ad inserire del testo di prova all'interno di esse. 
 
 
 AUTORE: Emanuele Vernetti
